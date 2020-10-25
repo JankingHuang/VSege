@@ -28,4 +28,8 @@ INCLUDEPATH +=  /usr/include/opencv4
 LIBS += /usr/lib64/libopencv_highgui.so \
         /usr/lib64/libopencv_core.so \
         /usr/lib64/libopencv_imgcodecs.so \
-        /usr/lib64/libopencv_imgproc.so
+        /usr/lib64/libopencv_imgproc.so \
+        /usr/lib64/libopencv_videostab.so \
+        /usr/lib64/libopencv_videoio.so.4.4
+
+
