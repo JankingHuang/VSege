@@ -4,6 +4,7 @@
 #include <QFileDialog>
 #include <QString>
 #include <QMessageBox>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -46,9 +47,8 @@ void MainWindow::on_pushButton_3_clicked()
              QString strInfo="不能打开视频文件";
              QMessageBox::warning(this, dlgTitle, inputPath);
           }
-      int num = 0;
-      int sum = capture.get( cv::VideoCaptureProperties::CAP_PROP_FRAME_COUNT);
-
+      double num = 0;
+      double sum = capture.get( cv::VideoCaptureProperties::CAP_PROP_FRAME_COUNT);
       while (1)
         {
             capture.read(frame);
@@ -57,7 +57,12 @@ void MainWindow::on_pushButton_3_clicked()
             }
             cv::imwrite(outputPath.toStdString() + "/" + std::to_string(num) + ".jpg" ,frame);
             num++;
-            ui->progressBar->setValue(num / sum  * 100);
+
+            ui->progressBar->setValue((num / sum)  * 100);
+            ui->progressBar->update();
+             qDebug() << "num:" << num << "\t"
+                      << "sum:" << sum << "\t"
+                     << "num / sum: " << (num / sum) * 100 << endl;
             imshow("Live", frame);
             if (cv::waitKey(5) >= 0)
                        break;

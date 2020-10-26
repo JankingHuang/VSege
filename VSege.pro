@@ -3,7 +3,7 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
-RC_FILE += rc.qrc
+RC_FILE += version.rc
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -34,6 +34,7 @@ LIBS += /usr/lib64/libopencv_highgui.so \
         /usr/lib64/libopencv_videoio.so.4.4
 
 RESOURCES += \
-    rc.qrc
+    rc.qrc \
+    version.rc
 
 
