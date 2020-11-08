@@ -1,5 +1,4 @@
 QT       += core gui
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -31,7 +30,7 @@ LIBS += /usr/lib64/libopencv_highgui.so \
         /usr/lib64/libopencv_imgcodecs.so \
         /usr/lib64/libopencv_imgproc.so \
         /usr/lib64/libopencv_videostab.so \
-        /usr/lib64/libopencv_videoio.so.4.4
+        /usr/lib64/libopencv_videoio.so
 
 RESOURCES += \
     rc.qrc \
